@@ -1,3 +1,14 @@
+header {
+    border: 3px dotted Purple;
+}
+
+main {
+    border: 3px dotted Blue;
+}
+footer {
+    border: 3px dotted Red;
+}
+
 html {
   font-size: 14px;
 }
