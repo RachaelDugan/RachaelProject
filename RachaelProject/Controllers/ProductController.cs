@@ -16,6 +16,26 @@ namespace RachaelProject.Controllers
             var products = repo.GetAllProducts();
             return View(products);
         }
+        public IActionResult UpdateProduct(int id)
+        {
+            ProductModel prod = repo.GetProductById(id);
+            if (prod == null)
+            {
+                return View("PupNotFound");
+            }
+            return View(prod);
+        }
+        public IActionResult UpdateProductToDatabase(ProductModel product)
+        {
+            repo.Update(product);
+
+            return RedirectToAction("ViewProduct", new { id = product.ProductId });
+        }
+        public IActionResult ViewProduct(int id)
+        {
+            var product = repo.GetProductById(id);
+            return View(product);
+        }
     }
 }
 

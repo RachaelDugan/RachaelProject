@@ -5,11 +5,13 @@ namespace RachaelProject
     public interface IProductRepository
     {
         public IEnumerable<ProductModel> GetAllProducts();
+        //public ProductModel GetProduct(int id);
        
         ProductModel GetProductById(int id);
-        int Insert(ProductModel product);
+        public void Insert(ProductModel pupToInsert);
 
-        int Delete(ProductModel product);
-        int Update(ProductModel product);
+        public void Delete(ProductModel product);
+        public void Update(ProductModel product);
+        
     }
 }
