@@ -1,0 +1,19 @@
+﻿@model ContactListModel
+
+<h2>Update @Model.FullName</h2>
+
+@using (Html.BeginForm("UpdateProductToDatabase", "Product", "Post"))
+{
+    <input asp-for="ContactId" type="hidden" value="@Model.ContactId" />
+
+    <label asp-for="FullName" class="control-label">FullName</label>
+    <input type="text" name="FullName" class="form-control" value="@Model.FullName" />
+
+    <label asp-for="EmailAddress" class="control-label">Email Address</label>
+    <input type="email" step="0.01" name="EmailAddress" class="form-control" value="@Model.EmailAddress" />
+    
+    <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+    <input type="tel" step="0.01" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" />
+
+    <input type="submit" value="Update Product" class="btn btn-primary" />
+}

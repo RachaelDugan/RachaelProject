@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ContactListModel>
+
+<h2>ContactList</h2>
+<div style="display: block">
+    <a href="/ContactList/InsertContact/">Enter your Contact Information</a>
+</div>
+<table class="table">
+    <tr>
+        <th>ContactId</th>
+        <th>FullName</th>
+        <th>EmailAddress</th>
+        <th>PhoneNumber</th>
+    </tr>
+
+    @foreach (var contact in @Model)
+    {
+        <tr>
+            <td><a href=/ContactList/ViewProduct/@contact.ContactId>@contact.ContactId</a></td>
+            <td>@contact.FullName</td>
+            <td>@contact.EmailAddress</td>
+            <td>@contact.PhoneNumber</td>
+        </tr>
+    }
+
+</table>
+            

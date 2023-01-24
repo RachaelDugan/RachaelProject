@@ -1,0 +1,24 @@
+﻿@model ContactListModel
+
+<h3>@Model.FullName Information</h3>
+
+<table class="table">
+    <tr>
+        <th>ContactId</th>
+        <th>FullName</th>
+        <th>EmailAddress</th>
+        <th>PhoneNumber</th>
+    </tr>
+    <tr>
+        <td>@Model.ContactId</td>
+        <td>@Model.FullName</td>
+        <td>@Model.EmailAddress</td>
+        <td>@Model.PhoneNumber</td>
+    </tr>
+</table>
+
+<div style="display: block">
+    <a href="/ContactList/UpdateProduct/@Model.ContactId">Update this Contact</a>
+</div>
+        
+        

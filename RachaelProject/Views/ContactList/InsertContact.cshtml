@@ -1,0 +1,29 @@
+﻿@model RachaelProject.Models.ContactListModel
+
+<h2>Enter your Contact Information</h2>
+
+@using (Html.BeginForm("InsertContactToDatabase", "contactlist", "Post"))
+{
+    <input asp-for="ContactId" type="hidden" value="" />
+
+    <label asp-for="FullName" class="control-label">Full Name</label>
+    <input type="text" name="FullName" class="form-control" value="" />
+
+    <label asp-for="EmailAddress" class="control-label">Email Address</label>
+    <input type="email" step="0.01" name="EmailAddress" class="form-control" />
+
+    <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+    <input type="text" step="0.01" name="PhoneNumber" class="form-control" />
+
+    <div class="form-group">
+        <label for="">Select a Category</label>
+        <select class="form-control" name="CategoryID" value="">
+            @foreach (var contact in Model.ContactList)
+            {
+                <option value="@contact.ContactId">@contact.ContactList @contact.FullName</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" value="Create Contact" class="btn btn-primary" />
+}
