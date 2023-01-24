@@ -15,15 +15,7 @@
     <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
     <input type="text" step="0.01" name="PhoneNumber" class="form-control" />
 
-    <div class="form-group">
-        <label for="">Select a Category</label>
-        <select class="form-control" name="CategoryID" value="">
-            @foreach (var contact in Model.ContactList)
-            {
-                <option value="@contact.ContactId">@contact.ContactList @contact.FullName</option>
-            }
-        </select>
-    </div>
-
     <input type="submit" value="Create Contact" class="btn btn-primary" />
+  
+
 }

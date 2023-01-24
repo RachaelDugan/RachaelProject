@@ -49,6 +49,3 @@ namespace RachaelProject.Controllers
         }
     }
 }
-
-
-    
