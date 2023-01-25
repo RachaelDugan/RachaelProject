@@ -4,6 +4,7 @@ namespace RachaelProject.Models
 {
     public class ProductModel
     {
+        public IEnumerable<ProductModel>? NewProduct { get; set; }
         [DisplayName("ProductId")]
         public int ProductId { get; set; }
         [DisplayName("Name")]
