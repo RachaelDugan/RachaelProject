@@ -2,7 +2,7 @@
 
 <h2>Update @Model.FullName</h2>
 
-@using (Html.BeginForm("UpdateProductToDatabase", "Product", "Post"))
+@using (Html.BeginForm("UpdateContactToDatabase", "ContactList", "Post"))
 {
     <input asp-for="ContactId" type="hidden" value="@Model.ContactId" />
 
@@ -15,5 +15,5 @@
     <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
     <input type="tel" step="0.01" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" />
 
-    <input type="submit" value="Update Product" class="btn btn-primary" />
+    <input type="submit" value="Update Contact" class="btn btn-primary" />
 }

@@ -15,11 +15,6 @@ namespace RachaelProject
         {
             return _conn.Query<ProductModel>("SELECT * FROM producttable;");
         }
-        //public ProductModel GetProduct(int id)
-        //{
-        //    return _conn.QuerySingle<ProductModel>("SELECT * FROM producttable WHERE ProductId = @id", new { id = id });
-        //}
-
         public ProductModel GetProductById(int id)
         {
             return _conn.QuerySingle<ProductModel>("SELECT * FROM producttable WHERE ProductID = @id", new { id = id });
@@ -53,17 +48,22 @@ namespace RachaelProject
 
         public void Delete(ProductModel product)
         {
-            throw new NotImplementedException();
+            _conn.Execute("DELETE FROM producttable WHERE ProductId = @ProductId;", new { id = product.ProductId });
         }
 
         public void Update(ProductModel product)
         {
-            _conn.Execute("UPDATE producttable " +
-                "SET ProductId = @ProductId, Name = @name, Breed = @breed, Age = @age, Favtoy = @favtoy, Description = @description " +
+            _conn.Execute("UPDATE producttable SET ProductId = @ProductId, Name = @name," +
                 "WHERE ProductID = @id",
-                new { productid = product.ProductId, name = product.Name, breed = product.Breed, 
-                    age = product.Age, favtoy = product.FavToy, 
-                    description = product.Description});
+                new 
+                { 
+                    productid = product.ProductId, 
+                    name = product.Name, 
+                    breed = product.Breed, 
+                    age = product.Age, 
+                    favtoy = product.FavToy, 
+                    description = product.Description
+                });
         }
 
        

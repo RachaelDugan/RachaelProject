@@ -36,6 +36,11 @@ namespace RachaelProject.Controllers
             var product = repo.GetProductById(id);
             return View(product);
         }
+        public IActionResult Delete(ProductModel product)
+        {
+            repo.Delete(product);
+            return RedirectToAction("Index");
+        }
     }
 }
 
