@@ -17,6 +17,7 @@ namespace RachaelProject.Models
         public string? FavToy { get; set; }
         [DisplayName("About Me")]
         public string? Description { get; set; }
+        public string? Image { get; set; }
         
     }
 }

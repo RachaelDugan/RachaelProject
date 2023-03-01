@@ -13,7 +13,7 @@ namespace RachaelProject
         }
         public IEnumerable<ProductModel> GetAllProducts()
         {
-            return _conn.Query<ProductModel>("SELECT * FROM producttable;");
+            return _conn.Query<ProductModel>("SELECT * FROM producttable;"); //I broke my Adopt tab when I added the image column. 
         }
         public ProductModel GetProductById(int id)
         {
@@ -23,7 +23,7 @@ namespace RachaelProject
         public void Insert(ProductModel pupToInsert)
         {
             _conn.Execute("INSERT INTO producttable (ProductId, Name, Breed, Age, FavToy, Description)" +
-                "VALUES (@ProductId, @Name, @Breed, @Age, @FavToy, @Description);",
+                "VALUES (@ProductId, @Name, @Breed, @Age, @FavToy, @Description, @Image);",
                 new
                 {
                     ProductId = pupToInsert.ProductId,
@@ -31,7 +31,8 @@ namespace RachaelProject
                     Breed = pupToInsert.Breed,
                     Age = pupToInsert.Age,
                     FavToy = pupToInsert.FavToy,
-                    Description = pupToInsert.Description
+                    Description = pupToInsert.Description,
+                    Image = pupToInsert.Image,
                 });
         }
         public IEnumerable<ProductModel> GetProducts()
@@ -62,7 +63,8 @@ namespace RachaelProject
                     breed = product.Breed, 
                     age = product.Age, 
                     favtoy = product.FavToy, 
-                    description = product.Description
+                    description = product.Description,
+                    image = product.Image,
                 });
         }
 
